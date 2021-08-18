@@ -1,0 +1,15 @@
+-lib PaperTea
+
+-cp src
+
+-D js-es=6
+-D js-classic
+
+-main Main
+--each
+
+--next
+--js game\resources\app\Content\Datas\Scripts\Plugins\DevTools\code.js
+
+--next
+--js ./dist/DevlTools.js
