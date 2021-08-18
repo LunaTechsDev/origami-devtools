@@ -10,12 +10,12 @@ import haxe.macro.Compiler;
 class Macros {
  #if macro
  static var pluginName = Context.definedValue('plugin-name');
- static var pluginDir = '${Sys.getCwd()}/game/resources/app/Content/Datas/Scripts/Plugins/${Macros.pluginName}/';
+ static var pluginDir = '${Sys.getCwd()}/game/resources/app/Content/Datas/Scripts/Plugins/${Macros.pluginName}';
 
  public static function copyDetails() {
   if (pluginName != null) {
    if (FileSystem.exists(pluginDir)) {
-    File.copy('${pluginDir}details.json', '${Sys.getCwd()}/details.json');
+    File.copy('${pluginDir}/details.json', '${Sys.getCwd()}/details.json');
    }
   }
  }
@@ -25,7 +25,7 @@ class Macros {
   if (isDist != null) {
    Compiler.setOutput('${Sys.getCwd()}/dist/code.js');
   } else {
-   Compiler.setOutput('${Macros.pluginDir}code.js');
+   Compiler.setOutput('${Macros.pluginDir}/code.js');
   }
  }
  #end
