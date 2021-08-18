@@ -3,8 +3,8 @@
 -cp tasks
 -cp src
 
---macro tasks.Macros.setOutput()
---macro tasks.Macros.copyDetails()
+--macro Macros.setOutput()
+--macro Macros.copyDetails()
 
 -D plugin-name=DevTools
 -D js-es=6

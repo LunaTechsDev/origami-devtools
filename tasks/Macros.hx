@@ -1,5 +1,3 @@
-package tasks;
-
 #if macro
 import sys.io.File;
 import sys.FileSystem;
