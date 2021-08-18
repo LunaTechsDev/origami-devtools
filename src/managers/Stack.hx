@@ -8,15 +8,15 @@ import pm.datas.Systems;
 
 @native("StackOveride")
 class Stack {
-  public static inline function setup() {
-    var quickStart = Plugins.getParameter('DevTools', 'Quick Start');
-    if (quickStart) {
-      Plugins.inject(GameStack, 'pushTitleScreen', () -> {
-        Game.current = new Game();
-        Game.current.initializeDefault();
-        GameStack.replace(new Map_(Systems.ID_MAP_START_HERO));
-        GameStack.requestPaintHUD = true;
-      }, true);
-    }
+ public static inline function setup() {
+  var quickStart = Plugins.getParameter('DevTools', 'Quick Start');
+  if (quickStart) {
+   Plugins.inject(GameStack, 'pushTitleScreen', () -> {
+    Game.current = new Game();
+    Game.current.initializeDefault();
+    GameStack.replace(new Map_(Systems.ID_MAP_START_HERO));
+    GameStack.requestPaintHUD = true;
+   }, true);
   }
+ }
 }
