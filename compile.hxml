@@ -1,15 +1,23 @@
 -lib PaperTea
 
+-cp tasks
 -cp src
 
+--macro Macros.setOutput()
+--macro Macros.copyDetails()
+
+-D plugin-name=DevTools
 -D js-es=6
 -D js-classic
 
 -main Main
+
 --each
+--next
+# Filled out via a macro
+--js game\
 
 --next
---js game\resources\app\Content\Datas\Scripts\Plugins\DevTools\code.js
-
---next
---js ./dist/DevlTools.js
+-D dist
+# Filled out via a macro
+--js dist\
