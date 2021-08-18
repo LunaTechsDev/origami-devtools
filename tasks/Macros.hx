@@ -15,7 +15,6 @@ class Macros {
  public static function copyDetails() {
   if (pluginName != null) {
    if (FileSystem.exists(pluginDir)) {
-    trace('${Sys.getCwd()}/details.json');
     File.copy('${pluginDir}details.json', '${Sys.getCwd()}/details.json');
    }
   }
