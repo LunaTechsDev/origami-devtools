@@ -4,18 +4,29 @@ package tasks;
 import sys.io.File;
 import sys.FileSystem;
 import haxe.macro.Context;
+import haxe.macro.Compiler;
 #end
 
 class Macros {
  #if macro
+ static var pluginName = Context.definedValue('plugin-name');
+ static var pluginDir = '${Sys.getCwd()}/game/resources/app/Content/Datas/Scripts/Plugins/${Macros.pluginName}/';
+
  public static function copyDetails() {
-  var pluginName = Context.definedValue('plugin-name');
-  var pluginDir = '${Sys.getCwd()}/game/resources/app/Content/Datas/Scripts/Plugins/${pluginName}/';
   if (pluginName != null) {
    if (FileSystem.exists(pluginDir)) {
     trace('${Sys.getCwd()}/details.json');
     File.copy('${pluginDir}details.json', '${Sys.getCwd()}/details.json');
    }
+  }
+ }
+
+ public static function setOutput() {
+  var isDist = Context.definedValue('dist');
+  if (isDist != null) {
+   Compiler.setOutput('${Sys.getCwd()}/dist/code.js');
+  } else {
+   Compiler.setOutput('${Macros.pluginDir}code.js');
   }
  }
  #end
