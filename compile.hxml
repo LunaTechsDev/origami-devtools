@@ -1,7 +1,9 @@
 -lib PaperTea
 
+-cp tasks
 -cp src
 
+-D plugin-name=DevTools
 -D js-es=6
 -D js-classic
 
@@ -13,3 +15,5 @@
 
 --next
 --js ./dist/DevlTools.js
+
+--macro tasks.Macros.copyDetails()
