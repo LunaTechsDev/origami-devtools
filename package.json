@@ -2,11 +2,13 @@
   "devDependencies": {
     "husky": "^7.0.1",
     "lix": "^15.10.1",
+    "nodemon": "^2.0.12",
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.1"
   },
   "scripts": {
     "build": "lix compile.hxml",
+    "watch": "nodemon -e hx,json --watch ./src/**/* --exec lix compile.hxml",
     "pretty-quick": "pretty-quick --staged"
   }
 }
