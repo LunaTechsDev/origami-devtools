@@ -35,6 +35,7 @@ class Macros {
   var pluginName = getPluginName();
   if (isDist != null) {
    Compiler.setOutput('${Sys.getCwd()}/dist/code.js');
+   File.copy('${Sys.getCwd()}/details.json', '${Sys.getCwd()}/dist/details.json');
   } else {
    Compiler.setOutput('${Macros.pluginDir}/${pluginName}/code.js');
   }
