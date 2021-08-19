@@ -20,3 +20,5 @@
 -D dist
 # Filled out via a macro
 --js dist\
+
+--macro Macros.runNapkin()

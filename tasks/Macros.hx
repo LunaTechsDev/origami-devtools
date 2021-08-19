@@ -1,5 +1,6 @@
 #if macro
 import sys.io.File;
+import haxe.io.Path;
 import sys.FileSystem;
 import haxe.macro.Context;
 import haxe.macro.Compiler;
@@ -39,6 +40,16 @@ class Macros {
   } else {
    Compiler.setOutput('${Macros.pluginDir}/${pluginName}/code.js');
   }
+ }
+
+ public static function runNapkin() {
+  Context.onAfterGenerate(() -> {
+   var pluginName = getPluginName();
+   var pluginDir = '${Macros.pluginDir}/${pluginName}/';
+   var distDir = '${Sys.getCwd()}/dist/';
+   Sys.command('npx napkin --path=${pluginDir}');
+   Sys.command('npx napkin --path=${distDir}');
+  });
  }
  #end
 }
