@@ -3,17 +3,28 @@ import sys.io.File;
 import sys.FileSystem;
 import haxe.macro.Context;
 import haxe.macro.Compiler;
+import haxe.Json;
 #end
 
 class Macros {
  #if macro
- static var pluginName = Context.definedValue('plugin-name');
- static var pluginDir = '${Sys.getCwd()}/game/resources/app/Content/Datas/Scripts/Plugins/${Macros.pluginName}';
+ static var pluginDir = '${Sys.getCwd()}/game/resources/app/Content/Datas/Scripts/Plugins';
+
+ public static function getPluginName() {
+  var data = File.getContent('${Sys.getCwd()}/details.json');
+  var details = Json.parse(data);
+  if (details.name != null) {
+    return details.name;
+  } else {
+    return 'Haxeplugin';
+  }
+ }
 
  public static function copyDetails() {
+  var pluginName = getPluginName();
   if (pluginName != null) {
    if (FileSystem.exists(pluginDir)) {
-    File.copy('${pluginDir}/details.json', '${Sys.getCwd()}/details.json');
+    File.copy('${pluginDir}/${pluginName}/details.json', '${Sys.getCwd()}/details.json');
     Sys.command('npx prettier ./details.json --write');
    }
   }
@@ -21,10 +32,11 @@ class Macros {
 
  public static function setOutput() {
   var isDist = Context.definedValue('dist');
+  var pluginName = getPluginName();
   if (isDist != null) {
    Compiler.setOutput('${Sys.getCwd()}/dist/code.js');
   } else {
-   Compiler.setOutput('${Macros.pluginDir}/code.js');
+   Compiler.setOutput('${Macros.pluginDir}/${pluginName}/code.js');
   }
  }
  #end
