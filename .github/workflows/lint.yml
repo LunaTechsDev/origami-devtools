@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - run: npm install
-      - run: lix download
-      - run: lix install haxelib:checkstyle
+      - run: npx lix download
+      - run: npx lix install haxelib:checkstyle
       - run: npm ci
       - run: npm run ci-checkstyle
