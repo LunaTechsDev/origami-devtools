@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@lunatechs/lunatea-napkin": "^2.0.1",
     "lix": "^15.10.1",
     "nodemon": "^2.0.12",
     "prettier": "^2.3.2"
