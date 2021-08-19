@@ -6,7 +6,6 @@
 --macro Macros.setOutput()
 --macro Macros.copyDetails()
 
--D plugin-name=DevTools
 -D js-es=6
 -D js-classic
 
