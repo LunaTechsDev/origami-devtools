@@ -84,7 +84,7 @@
         "max": 1000
       }
     },
-    {1
+    {
       "type": "Indentation",
       "props": {
         "severity": "INFO",
