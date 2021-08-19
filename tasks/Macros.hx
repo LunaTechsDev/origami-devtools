@@ -14,6 +14,7 @@ class Macros {
   if (pluginName != null) {
    if (FileSystem.exists(pluginDir)) {
     File.copy('${pluginDir}/details.json', '${Sys.getCwd()}/details.json');
+    Sys.command('npx prettier ./details.json --write');
    }
   }
  }
