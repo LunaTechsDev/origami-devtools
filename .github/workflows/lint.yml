@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - uses: lix-pm/setup-lix@1.0.0
+      - run: npm install
       - run: lix download
       - run: lix install haxelib:checkstyle
       - run: npm ci
