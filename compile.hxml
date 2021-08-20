@@ -3,8 +3,8 @@
 -cp tasks
 -cp src
 
---macro Macros.setOutput()
---macro Macros.copyDetails()
+--macro core.Macros.setOutput()
+--macro core.Macros.copyDetails()
 
 --dce full
 
@@ -23,4 +23,4 @@
 # Filled out via a macro
 --js dist\
 
---macro Macros.runNapkin()
+--macro core.Macros.runNapkin()
