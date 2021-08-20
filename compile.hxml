@@ -6,7 +6,8 @@
 --macro Macros.setOutput()
 --macro Macros.copyDetails()
 
--D plugin-name=DevTools
+--dce full
+
 -D js-es=6
 -D js-classic
 
@@ -21,3 +22,5 @@
 -D dist
 # Filled out via a macro
 --js dist\
+
+--macro Macros.runNapkin()

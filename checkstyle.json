@@ -88,10 +88,10 @@
       "type": "Indentation",
       "props": {
         "severity": "INFO",
-        "character": "tab",
+        "character": "  ",
         "ignoreConditionals": false,
         "ignoreComments": false,
-        "conditionalPolicy": "aligned",
+        "conditionalPolicy": "aligned_increase",
         "wrapPolicy": "larger"
       }
     },
@@ -129,7 +129,7 @@
         "severity": "WARNING",
         "dotPolicy": "none",
         "commaPolicy": "after",
-        "semicolonPolicy": "none"
+        "semicolonPolicy": "after"
       }
     },
     {

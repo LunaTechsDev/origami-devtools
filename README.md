@@ -32,6 +32,16 @@ You can compile the plugin by running
 npm run build
 ```
 
+To watch for changes and rebuild plugin
+
+```sh
+npm run watch
+```
+
 ## Updating PaperTea
 
 To update PaperTea we use lix package manager to install the latest version from GitHub.
+
+```sh
+npx lix install gh:LunaTechsDev/PaperTea
+```
