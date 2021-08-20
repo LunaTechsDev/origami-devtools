@@ -12,7 +12,7 @@ jobs:
    steps:
      - uses: actions/checkout@v2
      - uses: actions/setup-node@v1
-      - uses: inc0der-forks/setup-lix@master
+     - uses: inc0der-forks/setup-lix@master
        with:
          node-version: 12
      - run: lix download
