@@ -1,6 +1,5 @@
 -lib PaperTea
 
--cp tasks
 -cp src
 
 --macro core.Macros.setOutput()
